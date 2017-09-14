@@ -13,7 +13,7 @@ Run the following:
 *Optional*, run only if "Core" module is not installed yet:
 ```
 composer config repositories.module-core git https://github.com/scandiwebcom/Scandiweb-Assets-Core.git
-composer require scandiweb/module-core:"dev-master as 0.1.0"
+composer require scandiweb/module-core:"dev-master as 0.1.2"
 ```
 
 ```
