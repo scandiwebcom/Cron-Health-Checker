@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Scandiweb
+ * @author      Scandiweb <info@scandiweb.com>
+ * @copyright   Copyright (c) 2017 Scandiweb, Inc (http://scandiweb.com)
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::all" title="Allow everything" sortOrder="10" />
+            <resource id="Magento_Backend::admin" title="Magento Admin" sortOrder="20">
+                <resource id="Scandiweb_Core::all" title="Scandiweb" sortOrder="0">
+                    <resource id="Scandiweb_Cronhealth::config" title="Cron health checker config" sortOrder="50" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
