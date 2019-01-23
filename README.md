@@ -21,7 +21,7 @@ composer require scandiweb/module-core:"dev-master as 0.1.2"
 
 ```
 composer config repositories.module-menumanager git git@github.com:scandiwebcom/Cron-Health-Checker.git
-composer require scandiweb/cronhealth:1.0.0
+composer require scandiweb/cronhealth:1.1.0
 php -f bin/magento setup:upgrade
 ```
 
