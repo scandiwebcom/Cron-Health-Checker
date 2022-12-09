@@ -11,7 +11,7 @@ namespace Scandiweb\Cronhealth\Cron;
 use Exception;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\HTTP\Adapter\Curl;
-use Magento\Framework\Logger\Monolog;
+use Psr\Log\LoggerInterface;
 use Zend_Uri;
 
 /**
@@ -32,14 +32,14 @@ class SendPing
     protected $curlClient;
 
     /**
-     * @var Monolog
+     * @var LoggerInterface
      */
     protected $logger;
 
     public function __construct(
         ScopeConfigInterface $storeConfig,
         Curl $curl,
-        Monolog $logger
+        LoggerInterface $logger
     ) {
         $this->storeConfig = $storeConfig;
         $this->curlClient = $curl;
@@ -59,7 +59,7 @@ class SendPing
                     $this->curlClient->write('GET', $pingUrl);
                     $this->curlClient->read();
                 } catch (Exception $e) {
-                    $this->logger->addError($e->getMessage());
+                    $this->logger->error($e->getMessage());
                 }
             }
         }
